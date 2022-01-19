@@ -10,6 +10,8 @@ Descrizione:
 
 // 1 Creiamo un oggetto che contenga le informazioni dello studente secondo traccia
 
+const resultElement = document.getElementById('result'); // Recupero l'elemento in pagina
+
 const student = {
     name: 'Antonio',
     surname: 'Nicodemo',
