@@ -26,18 +26,46 @@ for (let key in student) {
 
 // 3 Creiamo un array di studenti
 
-const students = {
-    people: [
-        { name: 'Pippo', surname: 'Baudo', age: 55, },
-        { name: 'Mario', surname: 'Rossi', age: 28, },
-        { name: 'Lapo', surname: 'Raspanti', age: 25, },
-    ],
-};
+const students = [
+    { name: 'Pippo', surname: 'Baudo', age: 55, },
+    { name: 'Mario', surname: 'Rossi', age: 28, },
+    { name: 'Lapo', surname: 'Raspanti', age: 25, },
+];
 
-students.people.push(student);
+students.push(student);
 console.log(students);
 
-for (let i = 0; i < students.people.length; i++) {
-    console.log(students.people[i]);
-    resultElement.innerText = [i];
+let sum = ''; // !!!!!!!!! Variabile flag che andrà a formare cio che voglio scrivere nel DOM !!!!!!!!!!!!
+
+// 4 Ciclare gli oggetti e scrivere in pagina nome e cognome.
+
+for (let i = 0; i < students.length; i++) {
+
+    console.log(students[i]);
+
+    const currentElement = students[i];
+
+    for (let key in currentElement) {
+        console.log(currentElement[key]);
+        if (key != 'age') {  // Escludiamo la proprietà 'age' dalla somma di sotto
+            sum = sum + ' ' + [key] + ' ' + currentElement[key];
+        }
+        resultElement.innerText = sum;
+    }
 };
+
+// 5 Diamo la possibilità all'utente di  inserire i suoi dati per poi metterli nell'array precedentemente creato
+
+const userName = prompt(`Qual è il tuo nome?`);
+const userSurname = prompt(`Qual è il tuo cognome?`);
+const userAge = parseInt(prompt('Quanti anni hai?'));
+
+const userData = [];
+
+userData.push(userName, userSurname, userAge)
+
+console.log(userData);
+
+students.push(userData);
+
+console.log(students)
