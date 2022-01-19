@@ -25,7 +25,11 @@ for (let key in student) {
 // 3 Creiamo un array di studenti
 
 const students = {
-    people: [],
+    people: [
+        { name: 'Pippo', surname: 'Baudo', age: 55, },
+        { name: 'Mario', surname: 'Rossi', age: 28, },
+        { name: 'Lapo', surname: 'Raspanti', age: 25, },
+    ],
 };
 
 students.people.push(student);
