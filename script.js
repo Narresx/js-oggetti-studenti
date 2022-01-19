@@ -36,3 +36,8 @@ const students = {
 
 students.people.push(student);
 console.log(students);
+
+for (let i = 0; i < students.people.length; i++) {
+    console.log(students.people[i]);
+    resultElement.innerText = [i];
+};
